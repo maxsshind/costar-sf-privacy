@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — CoStar → Salesforce Property Sync</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; color: #1a1a1a; line-height: 1.65; background: #fafaf8; }
+  h1 { color: #0a2463; font-size: 26px; margin-bottom: 4px; }
+  h2 { color: #0a2463; font-size: 18px; margin-top: 28px; }
+  .updated { color: #6b6b6b; font-size: 14px; margin-bottom: 24px; }
+  code { background: #eef; padding: 1px 5px; border-radius: 4px; font-size: 90%; }
+  ul { padding-left: 22px; }
+  a { color: #1fb6a6; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy — CoStar → Salesforce Property Sync</h1>
+<p class="updated">Last updated: June 16, 2026</p>
+
+<h2>Overview</h2>
+<p>The CoStar → Salesforce Property Sync Chrome extension ("the Extension") is an internal
+productivity tool used by Rein &amp; Grossoehme (RGCRE) staff to copy property details from a
+CoStar property page into a matching Salesforce Property record (creating a new record or
+updating an existing one).</p>
+
+<h2>Data the Extension reads</h2>
+<ul>
+<li><strong>From CoStar (<code>*.costar.com</code>):</strong> the property's address, building
+size, land area, submarket, and the CoStar property ID (from the page URL) shown on the CoStar
+tab you are actively viewing. Read only when you open the extension popup, and only from the
+rendered page already on your screen. The Extension makes no network calls to CoStar and does
+not access CoStar's APIs.</li>
+<li><strong>From Salesforce (your org's <code>*.salesforce.com</code> domain):</strong> existing
+Property records (to match the property you're viewing) and the values of the record you choose
+to update — used to match, avoid duplicates, and show you what will change before any write.</li>
+</ul>
+
+<h2>Data the Extension stores</h2>
+<ul>
+<li><strong>Locally in Chrome (<code>chrome.storage.local</code>) only:</strong> your Salesforce
+OAuth access token, refresh token, and instance URL.</li>
+<li>No data is stored on any server operated by the developer.</li>
+</ul>
+
+<h2>Data the Extension sends</h2>
+<ul>
+<li>Property fields are written to <strong>your own Salesforce org</strong> via the official
+Salesforce REST API, using the OAuth token you authorized, and only after you review and approve
+the change.</li>
+<li><strong>No data is transmitted to the developer or any third party.</strong> There is no
+analytics, telemetry, or external server.</li>
+</ul>
+
+<h2>Authentication</h2>
+<p>Authentication uses Salesforce OAuth 2.0 via Chrome's <code>chrome.identity.launchWebAuthFlow</code>.
+You sign in directly to Salesforce; the Extension never sees your password.</p>
+
+<h2>Data retention &amp; deletion</h2>
+<ul>
+<li>Tokens persist locally until you click "Disconnect" in the popup, uninstall the Extension, or
+clear Chrome's extension storage.</li>
+<li>To revoke access on the Salesforce side: Salesforce Setup → Personal Information → Connected
+Apps OAuth Usage → Revoke.</li>
+</ul>
+
+<h2>Third parties</h2>
+<p>None. The Extension reads the rendered CoStar page (read-only DOM, no CoStar API calls) and
+communicates only with your Salesforce org via REST API.</p>
+
+<h2>Contact</h2>
+<p>For questions about this policy, contact: <a href="mailto:max@rgcre.com">max@rgcre.com</a></p>
+</body>
+</html>
